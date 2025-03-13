@@ -46,7 +46,98 @@
     <br>
     <h2>Texto subescrito</h2>
     <p>Vamos demonstrrar o texto subescrito com a formula da agua  H<sub>2</sub>O</p>
+    <br>
+    <h2>Trecho de codigo fonte</h2>
+    <p>Neste exemplo vou demonstrar um trecho de código</p>
+    <p>inserindo o comando <code>document.getElementbyld('editCodigo')</code></p>
+    <p>inserindo um longo codigo me python:</p>
     
+    <p><pre><code>import random
+
+        palavras = ["python", "desenvolvimento", "algoritmo", "programacao", "inteligencia", "artificial", "computador"]
+        
+        def escolher_palavra():
+            return random.choice(palavras)
+        
+        def exibir_palavra(palavra, letras_corretas):
+            palavra_exibida = ""
+            for letra in palavra:
+                if letra in letras_corretas:
+                    palavra_exibida += letra + " "
+                else:
+                    palavra_exibida += "_ "
+            return palavra_exibida.strip()
+        
+        def jogar_forca():
+            print("Bem-vindo ao Jogo da Forca!")
+            
+            palavra_secreta = escolher_palavra()
+            letras_corretas = []
+            letras_erradas = []
+            tentativas = 6
+            
+            while tentativas > 0:
+                print(f"\nVocê tem {tentativas} tentativas restantes.")
+                print(f"Letras erradas: {', '.join(letras_erradas) if letras_erradas else 'Nenhuma'}")
+                print("Palavra atual:", exibir_palavra(palavra_secreta, letras_corretas))
+                
+                letra = input("Digite uma letra: ").lower()
+                
+                if len(letra) != 1 or not letra.isalpha():
+                    print("Por favor, digite apenas uma letra.")
+                    continue
+                
+                if letra in letras_corretas or letra in letras_erradas:
+                    print(f"Você já tentou a letra '{letra}'. Tente outra.")
+                    continue
+                
+                if letra in palavra_secreta:
+                    letras_corretas.append(letra)
+                    print(f"Boa! A letra '{letra}' está na palavra.")
+                else:
+                    letras_erradas.append(letra)
+                    tentativas -= 1
+                    print(f"A letra '{letra}' não está na palavra.")
+                
+                if all(letra in letras_corretas for letra in palavra_secreta):
+                    print(f"\nParabéns! Você adivinhou a palavra '{palavra_secreta}'. Você venceu!")
+                    break
+            else:
+                print(f"\nVocê perdeu! A palavra era '{palavra_secreta}'.")
+        
+        def jogar_novamente():
+            while True:
+                resposta = input("\nQuer jogar novamente? (s/n): ").lower()
+                if resposta == "s":
+                    jogar_forca()
+                elif resposta == "n":
+                    print("Obrigado por jogar! Até a próxima.")
+                    break
+                else:
+                    print("Por favor, digite 's' para sim ou 'n' para não.")
+        
+        jogar_forca()
+        jogar_novamente()</code></pre></p>
+        <br>
+        <h2>Citações completas (livros)</h2>
+        <p>Segundo Sandra Kussunoki no seu livro A dança e o ventre:</p>
+        <P><blockquote>Dados existentes sobre intervenções cirurgicas nos corpos conteporaneos visando a obtnção de um corpo mais próximo do padrão estético tais como lipoaspiração, proteses de silicone, entre outras, comprovam essa busca obssesiva pelo ideal de perfeição, que é naseado principalmente na magreza </blockquote></P>
+        <br>
+        <h2>Abreviações</h2>
+        <p>Estamos estudando <abbr>HTML</abbr> e <abbr>CSS</abbr></p>
+        <br>
+        <h2>Texto Invertivo</h2>
+        <p><bdo dir="ltr">Estou estudando HTML</bdo></p>
+        <p><bdo dir="rtl">Estou estudando HTML</bdo></p>
+
+
+
+
+
+
+
+ 
+
 
 
 
